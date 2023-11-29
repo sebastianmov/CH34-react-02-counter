@@ -1,26 +1,21 @@
-import React, { useState } from 'react';
+
 import './App.css';
+import {NavBar} from './pages/navbar/NavBar';
+import {Footer} from './pages/footer/Footer';
+import {Home} from './pages/home/Home';
+import {Products} from './pages/products/Products';
 
-function Counter() {
-  const [count, setCount] = useState(0);
 
-  const increment = () => setCount(count + 1);
-  const decrement = () => setCount(count - 1);
-  const reset = () => setCount(0);
+
+function App() {
   return (
     <div className="App">
-      <h1>Hola</h1>
-      {/* 
-      Agreguen un componente que tenga lo siguiente componente Cpunter
-      - Valor numerico 0
-      - 3 botones +, -, reset
-      */}
-      <p>Valor numerico: {count}</p>
-      <button onClick={increment}>+</button>
-      <button onClick={decrement}>-</button>
-      <button onClick={reset}>Reset</button>
+      <NavBar />
+      <Home />
+      <Products />
+      <Footer />
     </div>
   );
 }
 
-export default Counter;
+export default App;
