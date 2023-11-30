@@ -1,9 +1,10 @@
 import React, { useState } from 'react';
-import {Button} from '../buttons/Button';
+// import { Button } from '../buttons/Button';
+import { ButtonGroup, Button, Typography, Box } from '@mui/material';
 
 // function Counter() {
 //     const [count, setCount] = useState(0);
-  
+
 //     const increment = () => setCount(count + 1);
 //     const decrement = () => setCount(count - 1);
 //     const reset = () => setCount(0);
@@ -21,7 +22,7 @@ import {Button} from '../buttons/Button';
 //       </div>
 //     );
 //   }
-  
+
 //   export default Counter;
 
 const CounterApp = () => {
@@ -46,15 +47,21 @@ const CounterApp = () => {
   }
 
   const counterComponent = (
-    <div className="counter-container">
-      <h2 id="counter">{counter}</h2>
+    <Box p={2} m={2} borderRadius={16} bgcolor={{xs:"primary.main", md:"success.main"}}>
+    {/* <div className="counter-container"> */}
+      {/* <h2 id="counter">{counter}</h2> */}
+      <Typography sx={{ fontSize: { xs: "2rem", sm: "4rem", md: "6rem", lg: "8rem" } }} variant="h1" component="p">{counter}</Typography>
       <div id="buttons">
-        <Button onClick={handleIncrement}>Add</Button>
-        <Button onClick={handleDecrement}>Less</Button>
-        <Button onClick={handleReset}>Reset</Button>
-        {/* <button onClick={()=>setCounter(0)} id="restart" type="button">Restart</button> */}
+        <ButtonGroup variant="contained" aria-label="outlined primary button group">
+          <Button onClick={handleIncrement}>Add</Button>
+          <Button onClick={handleDecrement}>Less</Button>
+          <Button onClick={handleReset}>Reset</Button>
+          {/* <button onClick={()=>setCounter(0)} id="restart" type="button">Restart</button> */}
+        </ButtonGroup>
+
       </div>
-    </div>
+    {/* </div> */}
+    </Box>
   );
 
   return counterComponent;
